@@ -8,18 +8,18 @@ import javax.persistence.Table;
 @Table(name = "basket")
 public class Basket extends AbstractEntity {
     @Column
-    private ProductEntity productEntity;
+    private Integer id_product;
     @Column
     private Integer quantity;
-    @Column
-    private PurchaseEntity order;
+//    @Column
+//    private PurchaseEntity order;
 
-    public ProductEntity getProductEntity() {
-        return productEntity;
+    public Integer getId_product() {
+        return id_product;
     }
 
-    public void setProductEntity(ProductEntity productEntity) {
-        this.productEntity = productEntity;
+    public void setProductEntity(Integer id_product) {
+        this.id_product= id_product;
     }
 
     public Integer getQuantity() {
@@ -29,12 +29,12 @@ public class Basket extends AbstractEntity {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-    public PurchaseEntity getOrder() {
-        return order;
-    }
-
-    public void setOrder(PurchaseEntity order) {
-        this.order = order;
-    }
+//
+//    public PurchaseEntity getOrder() {
+//        return order;
+//    }
+//
+//    public void setOrder(PurchaseEntity order) {
+//        this.order = order;
+//    }
 }
