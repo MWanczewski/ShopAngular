@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class AbstractEntity implements Persistable<Long> {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "idGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Override

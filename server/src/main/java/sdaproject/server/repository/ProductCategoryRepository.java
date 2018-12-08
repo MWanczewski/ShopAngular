@@ -14,4 +14,8 @@ public interface ProductCategoryRepository extends JpaRepository<ProductCategory
     @Query("SELECT new sdaproject.server.dto.DictionaryDTO(id, name) FROM ProductCategoryEntity")
     List<DictionaryDTO> getProductCategoriesDictionary();
 
+//    @Query("SELECT  pce.name FROM ProductCategoryEntity pce WHERE pce.name = 'igor'")
+//    List<String> getProductCategoriesName();
+//
+//    List<DictionaryDTO> findAllByName(String name);
 }

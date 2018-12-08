@@ -7,7 +7,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product_category")
-@SequenceGenerator(name = "idGenerator", sequenceName = "public.category_id_seq")
 public class ProductCategoryEntity extends AbstractEntity {
 
     @Column
