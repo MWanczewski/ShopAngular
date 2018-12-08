@@ -1,8 +1,6 @@
 package sdaproject.server.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -14,7 +12,8 @@ public class ProductEntity extends AbstractEntity{
     private String description;
     @Column
     private BigDecimal price;
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "product_category")
     ProductCategoryEntity category;
 
     public String getName() {
