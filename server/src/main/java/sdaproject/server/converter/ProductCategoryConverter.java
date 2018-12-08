@@ -5,7 +5,8 @@ import sdaproject.server.dto.ProductCategoryDTO;
 import sdaproject.server.entity.ProductCategoryEntity;
 
 @Component
-public class ProductCategoryConverter implements Converter<ProductCategoryEntity, ProductCategoryDTO> {
+public class ProductCategoryConverter
+        implements Converter<ProductCategoryEntity, ProductCategoryDTO> {
 
     @Override
     public ProductCategoryEntity convertToEntity(ProductCategoryDTO dto) {
