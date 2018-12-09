@@ -9,7 +9,9 @@ import sdaproject.server.service.AbstractService;
 
 import java.util.Collection;
 
-public abstract class AbstractServiceImpl<ENTITY extends AbstractEntity, DTO extends AbstractDTO> implements AbstractService<ENTITY, DTO> {
+public abstract class AbstractServiceImpl
+        <ENTITY extends AbstractEntity, DTO extends AbstractDTO>
+        implements AbstractService<ENTITY, DTO> {
 
     protected abstract JpaRepository<ENTITY, Long> getRepo();
     protected abstract Converter<ENTITY, DTO> getConverter();

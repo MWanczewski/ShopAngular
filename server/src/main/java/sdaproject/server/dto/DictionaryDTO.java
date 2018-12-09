@@ -1,5 +1,9 @@
 package sdaproject.server.dto;
 
+import sdaproject.server.entity.ProductCategoryEntity;
+
+import java.math.BigDecimal;
+
 public class DictionaryDTO extends AbstractDTO {
 
     private String name;

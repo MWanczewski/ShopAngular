@@ -1,10 +1,12 @@
 package sdaproject.server.converter;
 
+import org.springframework.stereotype.Component;
 import sdaproject.server.dto.ProductDTO;
 import sdaproject.server.entity.ProductEntity;
 
 import java.util.List;
 
+@Component
 public class ProductConverter implements Converter<ProductEntity, ProductDTO>{
     @Override
     public ProductEntity convertToEntity(ProductDTO dto) {

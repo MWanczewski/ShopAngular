@@ -13,7 +13,7 @@ public class ProductEntity extends AbstractEntity{
     @Column
     private BigDecimal price;
     @ManyToOne
-    @JoinColumn(name = "product_category")
+    @JoinColumn(name = "id_category")
     ProductCategoryEntity category;
 
     public String getName() {
