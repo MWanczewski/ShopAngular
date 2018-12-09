@@ -1,19 +1,23 @@
-package sdaproject.server.entity;
+package sdaproject.server.dto;
 
-import javax.persistence.*;
+import sdaproject.server.entity.ProductEntity;
+
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "stock")
-public class StockEntity extends AbstractEntity{
-
-    @ManyToOne
-    @JoinColumn(name = "id_product")
+public class StockDTO extends AbstractDTO{
     private ProductEntity product;
-    @Column
     private Integer quantity;
-    @Column
     private BigDecimal price;
+
+
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public BigDecimal getPrice() {
         return price;
@@ -31,11 +35,8 @@ public class StockEntity extends AbstractEntity{
         this.product = product;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }
+
