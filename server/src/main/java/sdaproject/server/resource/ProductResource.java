@@ -13,14 +13,14 @@ import sdaproject.server.service.ProductService;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductResource extends AbstractResource<ProductEntity, ProductDTO> {
+public class ProductResource
+        extends AbstractResource<ProductEntity, ProductDTO> {
    private final ProductService productService;
    private final Logger log  = LoggerFactory.getLogger(ProductResource.class);
 
     public ProductResource(ProductService productService) {
         this.productService = productService;
-    }
-
+}
     @Override
     public AbstractService<ProductEntity, ProductDTO> getService() {
         return productService;

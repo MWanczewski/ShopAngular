@@ -13,12 +13,16 @@ import sdaproject.server.service.ProductCategoryService;
 import java.util.List;
 
 @Service
-public class ProductCategoryServiceImpl extends AbstractServiceImpl<ProductCategoryEntity, ProductCategoryDTO> implements ProductCategoryService {
+public class ProductCategoryServiceImpl
+        extends AbstractServiceImpl<ProductCategoryEntity, ProductCategoryDTO>
+        implements ProductCategoryService {
 
     private final ProductCategoryRepository productCategoryRepository;
     private final ProductCategoryConverter productCategoryConverter;
 
-    public ProductCategoryServiceImpl(ProductCategoryRepository productCategoryRepository, ProductCategoryConverter productCategoryConverter) {
+    public ProductCategoryServiceImpl
+            (ProductCategoryRepository productCategoryRepository,
+             ProductCategoryConverter productCategoryConverter) {
         this.productCategoryRepository = productCategoryRepository;
         this.productCategoryConverter = productCategoryConverter;
     }

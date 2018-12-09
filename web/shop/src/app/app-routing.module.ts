@@ -9,6 +9,7 @@ import {EditProductComponent} from "./admin-panel/edit-product/edit-product.comp
 import {OrdersComponent} from "./admin-panel/orders/orders.component";
 import {WarehouseComponent} from "./admin-panel/warehouse/warehouse.component";
 import {ProductCategoriesResolve, ProductCategoryResolve} from "./shared/resolve/product-category.resolve";
+import {ProductsResolve} from "./shared/resolve/product.resolve";
 
 const routes: Routes = [
   {
@@ -39,7 +40,10 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        component: ProductsComponent,
+        resolve: {
+          products: ProductsResolve
+        }
       },
       {
         path: 'products/add',
