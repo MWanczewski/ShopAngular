@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 public class ProductDTO extends AbstractDTO{
     private String name;
     private ProductCategoryEntity productCategoryEntity;
-    private BigDecimal price;
 
     public String getDescription() {
         return description;
@@ -33,13 +32,5 @@ public class ProductDTO extends AbstractDTO{
 
     public void setProductCategoryEntity(ProductCategoryEntity productCategoryEntity) {
         this.productCategoryEntity = productCategoryEntity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
     }
 }

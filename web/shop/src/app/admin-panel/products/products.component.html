@@ -7,7 +7,6 @@
     <th>Nazwa</th>
     <th>Opis</th>
     <th>Kategoria</th>
-    <th>Cena</th>
     <th>Akcje</th>
   </tr>
   <tr *ngFor="let product of products; let rowIndex = index">
@@ -22,9 +21,6 @@
     </td>
     <td>
       {{ product.productCategoryEntity.name }}
-    </td>
-    <td>
-      {{ product.price }}
     </td>
     <td>
       <button matTooltip="Usuń produkt" mat-button><mat-icon>delete</mat-icon></button>
