@@ -23,7 +23,7 @@
       {{ warehouse.quantity}}
     </td>
     <td>
-      <button matTooltip="Aktualizuj stan magazynowy" mat-button><mat-icon>edit</mat-icon></button>
+      <button [routerLink]="['/', 'admin-panel', 'warehouse', 'edit', warehouse.id]" matTooltip="Aktualizuj stan magazynowy" mat-button><mat-icon>edit</mat-icon></button>
     </td>
   </tr>
 </table>

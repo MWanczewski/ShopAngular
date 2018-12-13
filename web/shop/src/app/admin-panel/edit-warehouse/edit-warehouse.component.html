@@ -1,3 +1,38 @@
-<p>
-  edit-warehouse works!
-</p>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Magazyn</mat-card-title>
+    <mat-card-subtitle>Dodawanie / Edycja</mat-card-subtitle>
+  </mat-card-header>
+  <mat-form-field>
+    <mat-select [(ngModel)]="warehouse.product.id"  placeholder="Wybierz produkt">
+      <mat-option *ngFor="let product of products" [value]="product.id">
+        {{product.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card-content>
+    <section class="form-section">
+      <form>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="warehouse.price" name="price" matInput placeholder="Cena">
+        </mat-form-field>
+      </form>
+    </section>
+  </mat-card-content>
+  <mat-card-content>
+    <section class="form-section">
+      <form>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="warehouse.quantity" name="quantity" matInput placeholder="Ilosc">
+        </mat-form-field>
+      </form>
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="button-row">
+      <button (click)="back()" mat-flat-button color="accent">Wróć</button>
+      <button (click)="saveWarehouse()" mat-flat-button color="primary">Zapisz</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

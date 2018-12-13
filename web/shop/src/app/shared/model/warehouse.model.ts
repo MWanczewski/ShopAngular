@@ -1,8 +1,9 @@
 import {ProductModel} from "./product.model";
 
 export class WarehouseModel {
-  id : number = null;
-  product : ProductModel = null;
-  quantity : number = null;
-  price : number = null;
+  id: number = null;
+  price: number = null;
+  quantity: number = null;
+  product: ProductModel = new ProductModel();
+
 }
