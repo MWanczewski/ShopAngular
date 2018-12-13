@@ -10,22 +10,29 @@ import sdaproject.server.repository.StockRepository;
 import sdaproject.server.service.StockService;
 
 @Service
-public class StockServiceImpl extends AbstractServiceImpl<StockEntity, StockDTO> implements StockService {
+public class StockServiceImpl
+        extends AbstractServiceImpl<StockEntity, StockDTO>
+        implements StockService {
+
     private final StockRepository stockRepository;
     private final StockConverter stockConverter;
 
-    public StockServiceImpl(StockRepository stockRepository, StockConverter stockConverter) {
+    public StockServiceImpl
+            (StockRepository stockRepository,
+             StockConverter stockConverter) {
         this.stockRepository = stockRepository;
         this.stockConverter = stockConverter;
     }
 
     @Override
     protected JpaRepository<StockEntity, Long> getRepo() {
-        return this.stockRepository;
+
+        return stockRepository;
     }
 
     @Override
     protected Converter<StockEntity, StockDTO> getConverter() {
+
         return this.stockConverter;
     }
 }

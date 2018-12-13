@@ -9,7 +9,7 @@ public class StockEntity extends AbstractEntity{
 
     @ManyToOne
     @JoinColumn(name = "id_product")
-    private ProductEntity product;
+    private ProductEntity productEntity;
     @Column
     private Integer quantity;
     @Column
@@ -24,11 +24,11 @@ public class StockEntity extends AbstractEntity{
     }
 
     public ProductEntity getProduct() {
-        return product;
+        return productEntity;
     }
 
     public void setProduct(ProductEntity product) {
-        this.product = product;
+        this.productEntity = product;
     }
 
     public Integer getQuantity() {

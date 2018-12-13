@@ -12,7 +12,7 @@ public class ProductEntity extends AbstractEntity{
     private String description;
     @ManyToOne
     @JoinColumn(name = "id_category")
-    ProductCategoryEntity category;
+    private ProductCategoryEntity category;
 
     public String getName() {
         return name;

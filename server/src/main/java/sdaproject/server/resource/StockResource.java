@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import sdaproject.server.dto.StockDTO;
 import sdaproject.server.entity.StockEntity;
 import sdaproject.server.service.AbstractService;
-import sdaproject.server.service.ProductService;
 import sdaproject.server.service.StockService;
+
+
 
 @RestController
 @RequestMapping("/api/stocks")

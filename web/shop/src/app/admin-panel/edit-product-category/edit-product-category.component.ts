@@ -32,5 +32,4 @@ export class EditProductCategoryComponent implements OnInit {
   back() {
     this.location.back();
   }
-
 }

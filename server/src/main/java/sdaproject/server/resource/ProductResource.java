@@ -23,6 +23,7 @@ public class ProductResource
 }
     @Override
     public AbstractService<ProductEntity, ProductDTO> getService() {
+
         return productService;
     }
 }

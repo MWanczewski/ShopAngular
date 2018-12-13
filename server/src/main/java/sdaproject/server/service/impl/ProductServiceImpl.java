@@ -4,13 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import sdaproject.server.converter.Converter;
 import sdaproject.server.converter.ProductConverter;
-import sdaproject.server.dto.DictionaryDTO;
 import sdaproject.server.dto.ProductDTO;
 import sdaproject.server.entity.ProductEntity;
 import sdaproject.server.repository.ProductRepository;
 import sdaproject.server.service.ProductService;
 
-import java.util.List;
+
 
 @Service
 public class ProductServiceImpl
@@ -36,6 +35,7 @@ public class ProductServiceImpl
 
     @Override
     protected Converter<ProductEntity, ProductDTO> getConverter() {
+
         return productConverter;
     }
 

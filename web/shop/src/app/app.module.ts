@@ -19,6 +19,9 @@ import {ProductCategoryService} from "./shared/service/product-category.service"
 import {ProductCategoriesResolve, ProductCategoryResolve} from "./shared/resolve/product-category.resolve";
 import {ProductResolve, ProductsResolve} from "./shared/resolve/product.resolve";
 import {ProductService} from "./shared/service/product.service";
+import { EditWarehouseComponent } from './admin-panel/edit-warehouse/edit-warehouse.component';
+import {WarehouseService} from "./shared/service/warehouse.service";
+import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.resolve";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import {ProductService} from "./shared/service/product.service";
     EditProductCategoryComponent,
     EditProductComponent,
     OrdersComponent,
-    WarehouseComponent
+    WarehouseComponent,
+    EditWarehouseComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import {ProductService} from "./shared/service/product.service";
     ProductCategoryResolve,
     ProductService,
     ProductResolve,
-    ProductsResolve
+    ProductsResolve,
+    WarehouseService,
+    WarehousesResolve,
+    WarehouseResolve
   ],
   bootstrap: [MainComponent]
 })

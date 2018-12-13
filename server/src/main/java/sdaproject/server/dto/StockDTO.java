@@ -5,18 +5,16 @@ import sdaproject.server.entity.ProductEntity;
 import java.math.BigDecimal;
 
 public class StockDTO extends AbstractDTO{
-    private ProductEntity product;
+
     private Integer quantity;
+    private ProductEntity product;
     private BigDecimal price;
+
 
 
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public BigDecimal getPrice() {
