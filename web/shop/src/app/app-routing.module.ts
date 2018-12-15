@@ -54,10 +54,11 @@ const routes: Routes = [
         path: 'warehouse/edit/:id',
         component: EditWarehouseComponent,
         resolve: {
-          product: ProductResolve,
+          product: ProductsResolve,
           warehouse: WarehouseResolve
         }
       },
+
       {
         path: 'products',
         component: ProductsComponent,
@@ -81,6 +82,7 @@ const routes: Routes = [
           productCategories: ProductCategoriesResolve
         }
       },
+
 
       {
         path: 'product-categories',

@@ -24,6 +24,8 @@
     </td>
     <td>
       <button [routerLink]="['/', 'admin-panel', 'warehouse', 'edit', warehouse.id]" matTooltip="Aktualizuj stan magazynowy" mat-button><mat-icon>edit</mat-icon></button>
+      <button (click)="removeWarehouse(warehouse.id, rowIndex)" matTooltip="Usuń produkt z magazynu" mat-button><mat-icon>delete</mat-icon></button>
+
     </td>
   </tr>
 </table>
