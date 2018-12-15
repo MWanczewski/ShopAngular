@@ -21,7 +21,7 @@ public class ProductCategoryResource extends AbstractResource<ProductCategoryEnt
     }
 
     @Override
-    public ProductCategoryService getService() {
+    public ProductCategoryService getBasketService() {
         return productCategoryService;
     }
 
