@@ -54,7 +54,7 @@ const routes: Routes = [
         path: 'warehouse/edit/:id',
         component: EditWarehouseComponent,
         resolve: {
-          product: ProductResolve,
+          product: ProductsResolve,
           warehouse: WarehouseResolve
         }
       },

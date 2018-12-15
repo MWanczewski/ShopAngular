@@ -10,7 +10,6 @@ import sdaproject.server.repository.ProductRepository;
 import sdaproject.server.service.ProductService;
 
 
-
 @Service
 public class ProductServiceImpl
         extends AbstractServiceImpl<ProductEntity, ProductDTO>
@@ -29,13 +28,11 @@ public class ProductServiceImpl
 
     @Override
     protected JpaRepository<ProductEntity, Long> getRepo() {
-
         return productRepository;
     }
 
     @Override
     protected Converter<ProductEntity, ProductDTO> getConverter() {
-
         return productConverter;
     }
 

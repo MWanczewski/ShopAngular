@@ -13,31 +13,31 @@ public abstract class AbstractResource<ENTITY extends AbstractEntity, DTO extend
 
     private static final Logger log = LoggerFactory.getLogger(AbstractResource.class);
 
-    public abstract AbstractService<ENTITY, DTO> getService();
+    public abstract AbstractService<ENTITY, DTO> getBasketService();
 
     @GetMapping("/{id}")
     public DTO getById(@PathVariable("id") Long id) {
-        return getService().findById(id);
+        return getBasketService().findById(id);
     }
 
     @GetMapping
     public Collection<DTO> getAll() {
-        return getService().getAll();
+        return getBasketService().getAll();
     }
 
     @PostMapping
     public DTO create(@RequestBody DTO dto) {
-        return getService().save(dto);
+        return getBasketService().save(dto);
     }
 
     @PutMapping("/{id}")
     public DTO update(@RequestBody DTO dto) {
-        return getService().update(dto);
+        return getBasketService().update(dto);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) throws Exception {
-        getService().delete(id);
+        getBasketService().delete(id);
     }
 
 }

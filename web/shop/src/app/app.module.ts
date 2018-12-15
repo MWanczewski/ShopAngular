@@ -22,6 +22,7 @@ import {ProductService} from "./shared/service/product.service";
 import { EditWarehouseComponent } from './admin-panel/edit-warehouse/edit-warehouse.component';
 import {WarehouseService} from "./shared/service/warehouse.service";
 import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.resolve";
+import { BasketsComponent } from './admin-panel/baskets/baskets.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.re
     EditProductComponent,
     OrdersComponent,
     WarehouseComponent,
-    EditWarehouseComponent
+    EditWarehouseComponent,
+    BasketsComponent
   ],
   imports: [
     BrowserModule,
