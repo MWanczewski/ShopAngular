@@ -58,6 +58,7 @@ const routes: Routes = [
           warehouse: WarehouseResolve
         }
       },
+
       {
         path: 'products',
         component: ProductsComponent,
@@ -81,6 +82,7 @@ const routes: Routes = [
           productCategories: ProductCategoriesResolve
         }
       },
+
 
       {
         path: 'product-categories',
