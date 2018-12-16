@@ -20,7 +20,7 @@
       {{ product.description }}
     </td>
     <td>
-      {{ product.productCategoryEntity.name }}
+      {{ product.category.name }}
     </td>
     <td>
       <button (click)="removeProduct(product.id, rowIndex)" matTooltip="Usuń produkt" mat-button><mat-icon>delete</mat-icon></button>

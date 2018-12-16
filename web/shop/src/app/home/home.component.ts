@@ -13,7 +13,7 @@ import {BasketService} from "../shared/service/basket.service";
 })
 export class HomeComponent implements OnInit {
 
-  items: Array<WarehouseComponent>=[];
+  items: Array<WarehouseModel>=[];
 
   constructor(private route: ActivatedRoute, private basketService: BasketService) { }
 

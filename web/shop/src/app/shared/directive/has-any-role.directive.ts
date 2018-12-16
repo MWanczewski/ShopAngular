@@ -5,6 +5,7 @@ import {UserModel} from "../model/user.model";
 @Directive({
   selector: '[hasAnyRole]'
 })
+
 export class HasAnyRoleDirective {
 
   constructor(private templateRef: TemplateRef<any>,
