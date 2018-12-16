@@ -43,6 +43,11 @@ export  class BasketService {
   public summary(): number {
     return this.basket.summary()
   }
+
+  public isEmpty(): boolean {
+    return this.basket.isEmpty();
+  }
+
   public getBasketInfo() {
     let tempBasket = localStorage.getItem('basket');
     if(tempBasket) {
@@ -50,4 +55,6 @@ export  class BasketService {
       this.basketStream.next(this.basket);
     }
   }
+
+
 }

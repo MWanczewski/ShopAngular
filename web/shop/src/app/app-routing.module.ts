@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
 import {ProductsComponent} from "./admin-panel/products/products.component";
@@ -12,6 +12,13 @@ import {ProductCategoriesResolve, ProductCategoryResolve} from "./shared/resolve
 import {ProductResolve, ProductsResolve} from "./shared/resolve/product.resolve";
 import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.resolve";
 import {EditWarehouseComponent} from "./admin-panel/edit-warehouse/edit-warehouse.component";
+import {LoginComponent} from "./login/login.component";
+import {AdminGuard} from "./shared/guard/admin.guard";
+import {GuestGuard} from "./shared/guard/guest.guard";
+import {BasketsComponent} from "./baskets/baskets.component";
+import {NewOrderComponent} from "./new-order/new-order.component";
+import {LoginGuard} from "./shared/guard/login.guard";
+
 
 const routes: Routes = [
   {
@@ -23,6 +30,31 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
+
+
+  {
+    path: 'basket',
+    component: BasketsComponent
+  },
+
+
+  {
+    path: 'new-order',
+    component: NewOrderComponent,
+    canActivate: [LoginGuard]
+  },
+
+  {
+    path: "login",
+    component: LoginComponent,
+    canActivate: [GuestGuard]
+  },
+
+
+
+
+
+
   {
     path: 'admin-panel',
     component: AdminPanelComponent,
@@ -44,7 +76,7 @@ const routes: Routes = [
         }
       },
       {
-        path:'warehouse/add',
+        path: 'warehouse/add',
         component: EditWarehouseComponent,
         resolve: {
           products: ProductsResolve
@@ -69,7 +101,7 @@ const routes: Routes = [
       {
         path: 'products/add',
         component: EditProductComponent,
-        resolve:{
+        resolve: {
           productCategories: ProductCategoriesResolve
         }
       },
@@ -102,6 +134,7 @@ const routes: Routes = [
           productCategory: ProductCategoryResolve
         }
       },
+
       {
         path: '**',
         redirectTo: 'products',
@@ -120,4 +153,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
