@@ -4,7 +4,7 @@ import java.util.List;
 
 public class UserDTO extends AbstractDTO {
     private String email;
-    private String name;
+    private String firstName;
     private String secondName;
     private String street;
     private String city;
@@ -21,12 +21,12 @@ public class UserDTO extends AbstractDTO {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     public String getSecondName() {

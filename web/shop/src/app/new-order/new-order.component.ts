@@ -29,7 +29,7 @@ export class NewOrderComponent implements OnInit {
     });
   }
 
-  cartSummary(): number {
+  basketSummary(): number {
     return this.basketService.summary();
   }
 

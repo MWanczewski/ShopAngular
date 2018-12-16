@@ -19,7 +19,7 @@ public class UserConverter implements Converter<UserEntity, UserDTO> {
         UserDTO dto = new UserDTO();
 
         dto.setId(entity.getId());
-        dto.setName(entity.getName());
+        dto.setFirstName(entity.getName());
         dto.setSecondName(entity.getSecondName());
         dto.setEmail(entity.getEmail());
         dto.setCity(entity.getCity());
