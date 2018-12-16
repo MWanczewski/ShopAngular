@@ -51,13 +51,10 @@ const routes: Routes = [
   },
 
 
-
-
-
-
   {
     path: 'admin-panel',
     component: AdminPanelComponent,
+    canActivate:[AdminGuard],
     children: [
       {
         path: '',
