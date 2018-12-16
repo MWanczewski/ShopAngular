@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from "./app-routing.module";
 import { MainComponent } from './layout/main/main.component';
@@ -25,6 +25,24 @@ import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.re
 import { BasketsComponent } from './baskets/baskets.component';
 import { LoginComponent } from './login/login.component';
 import { NewOrderComponent } from './new-order/new-order.component';
+import {BasketService} from "./shared/service/basket.service";
+import {AppService} from "./shared/service/app.service";
+import {UserModel} from "./shared/model/user.model";
+import {GuestGuard} from "./shared/guard/guest.guard";
+import {LoginGuard} from "./shared/guard/login.guard";
+import {AdminGuard} from "./shared/guard/admin.guard";
+import {AuthService} from "./shared/service/auth.service";
+
+
+export function initLoggedUserFactory(appService: AppService, cartService: BasketService) {
+  return () => {
+    cartService.getBasketInfo();
+    appService.getLoggedUserInfo().subscribe((loggedUser: UserModel) => {
+      return loggedUser;
+    });
+  }
+}
+
 
 @NgModule({
   declarations: [
@@ -42,6 +60,7 @@ import { NewOrderComponent } from './new-order/new-order.component';
     BasketsComponent,
     LoginComponent,
     NewOrderComponent
+
   ],
   imports: [
     BrowserModule,
@@ -51,6 +70,18 @@ import { NewOrderComponent } from './new-order/new-order.component';
     SharedModule
   ],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initLoggedUserFactory,
+      deps: [AppService, BasketService],
+      multi: true
+    },
+    GuestGuard,
+    LoginGuard,
+    AdminGuard,
+    AuthService,
+    AppService,
+    BasketService,
     ProductCategoryService,
     ProductCategoriesResolve,
     ProductCategoryResolve,
