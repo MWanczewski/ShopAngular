@@ -4,5 +4,5 @@ export class ProductModel {
   id: number = null;
   name: string = null;
   description: string = null;
-  productCategoryEntity: ProductCategoryModel = new ProductCategoryModel();
+  category: ProductCategoryModel = new ProductCategoryModel();
 }

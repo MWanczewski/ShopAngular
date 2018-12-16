@@ -16,7 +16,7 @@ export class WarehouseService {
   }
 
   public getWarehouses(): Observable<Array<WarehouseModel>> {
-    return this.http.get("/api/stocks").pipe(map((response: Array<WarehouseModel>) => {
+    return this.http.get("/api/stocks/open").pipe(map((response: Array<WarehouseModel>) => {
       this.warehouses = response;
       this.warehousesStream.next(this.warehouses);
       return this.warehouses;
@@ -26,7 +26,7 @@ export class WarehouseService {
     return this.warehousesStream.pipe(startWith(this.warehouses));
   }
   public removeWarehouse(id: number) {
-    return this.http.delete("/api/stocks/" + id);
+    return this.http.delete("/api/stocks/open/" + id);
   }
 
   public getWarehouse(id: number): Observable<WarehouseModel> {
