@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {WarehouseComponent} from "../admin-panel/warehouse/warehouse.component";
+import {ActivatedRoute} from "@angular/router";
+import {WarehouseModel} from "../shared/model/warehouse.model";
+import {BasketItemModel} from "../shared/model/basket-item.model";
+
 
 @Component({
   selector: 'app-home',
@@ -7,8 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  items: Array<WarehouseComponent>=[];
+
+  constructor(private route: ActivatedRoute, private basketService: BasketService) { }
 
   ngOnInit() {
+    if (this.route.snapshot.data['items']){
+      this.items = this.route.snapshot.data['items'];
+    }
+  }
+
+  addtoBasket(item: WarehouseModel){
+    let shoppingBasketItem = new BasketItemModel(item,1);
+    this.basketService.addItem(shoppingBasketItem);
+  }
+
+  isInBsket(warehouseId: number): boolean{
+    return this.basketService.containsItem(warehouseId);
   }
 }
+
