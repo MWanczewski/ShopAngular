@@ -22,7 +22,7 @@ import {ProductService} from "./shared/service/product.service";
 import { EditWarehouseComponent } from './admin-panel/edit-warehouse/edit-warehouse.component';
 import {WarehouseService} from "./shared/service/warehouse.service";
 import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.resolve";
-import { BasketsComponent } from './admin-panel/baskets/baskets.component';
+import { BasketsComponent } from './baskets/baskets.component';
 import { LoginComponent } from './login/login.component';
 import { NewOrderComponent } from './new-order/new-order.component';
 

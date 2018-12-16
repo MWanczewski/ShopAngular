@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.basketService.addItem(shoppingBasketItem);
   }
 
-  isInBsket(warehouseId: number): boolean{
+  isInBasket(warehouseId: number): boolean{
     return this.basketService.containsItem(warehouseId);
   }
 }
