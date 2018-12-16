@@ -3,6 +3,7 @@ import {WarehouseComponent} from "../admin-panel/warehouse/warehouse.component";
 import {ActivatedRoute} from "@angular/router";
 import {WarehouseModel} from "../shared/model/warehouse.model";
 import {BasketItemModel} from "../shared/model/basket-item.model";
+import {BasketService} from "../shared/service/basket.service";
 
 
 @Component({
