@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "user")
 public class UserEntity extends AbstractEntity {
     @Column(name = "email")
     private String email;
@@ -37,6 +38,9 @@ public class UserEntity extends AbstractEntity {
             joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "id"))
     private List<RoleEntity> roles;
+
+    public UserEntity() {
+    }
 
     public UserEntity(UserEntity user) {
         setId(user.getId());
