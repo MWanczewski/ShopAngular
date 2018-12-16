@@ -38,6 +38,20 @@ public class UserEntity extends AbstractEntity {
             inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "id"))
     private List<RoleEntity> roles;
 
+    public UserEntity(UserEntity user) {
+        setId(user.getId());
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+        this.name = user.getName();
+        this.secondName = user.getSecondName();
+        this.street = user.getStreet();
+        this.postalCode = user.getPostalCode();
+        this.country = user.getCountry();
+        this.roles = user.getRoles();
+        this.city = user.getCity();
+        this.phoneNumber = user.getPhoneNumber();
+    }
+
     public String getEmail() {
         return email;
     }
