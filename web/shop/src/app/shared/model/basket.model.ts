@@ -7,7 +7,7 @@ export class BasketModel {
     this.items=basket.items;
   }
 
-  public clearCart(){
+  public clearBasket(){
     this.items=[];
   }
 
