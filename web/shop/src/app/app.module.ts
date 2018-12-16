@@ -24,7 +24,6 @@ import {WarehouseService} from "./shared/service/warehouse.service";
 import {WarehouseResolve, WarehousesResolve} from "./shared/resolve/warehause.resolve";
 import { BasketsComponent } from './admin-panel/baskets/baskets.component';
 import { LoginComponent } from './login/login.component';
-import { BasketComponent } from './basket/basket.component';
 import { NewOrderComponent } from './new-order/new-order.component';
 
 @NgModule({
@@ -42,7 +41,6 @@ import { NewOrderComponent } from './new-order/new-order.component';
     EditWarehouseComponent,
     BasketsComponent,
     LoginComponent,
-    BasketComponent,
     NewOrderComponent
   ],
   imports: [
