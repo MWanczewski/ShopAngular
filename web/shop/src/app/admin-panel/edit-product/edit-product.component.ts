@@ -23,11 +23,11 @@ export class EditProductComponent implements OnInit {
     if (this.route.snapshot.data['product']){
       this.product = this.route.snapshot.data['product'];
     }
-    if (this.route.snapshot.data['productCategories']){
-      this.categories = this.route.snapshot.data['productCategories']
+    if (this.route.snapshot.data['categories']){
+      this.categories = this.route.snapshot.data['categories']
     }
     // console.log(this.product);
-    // console.log(this.categories);
+    // console.log(this.categories);S
   }
   saveProduct(){
     this.productService.saveProduct(this.product).subscribe( ()=>{

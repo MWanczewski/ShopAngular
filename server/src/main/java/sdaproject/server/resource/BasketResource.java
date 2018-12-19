@@ -20,7 +20,7 @@ public class BasketResource extends AbstractResource<BasketEntity, BasketDTO> {
     }
 
     @Override
-    public AbstractService<BasketEntity, BasketDTO> getBasketService() {
+    public AbstractService<BasketEntity, BasketDTO> getService() {
         return basketService;
     }
 }

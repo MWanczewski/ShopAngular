@@ -2,6 +2,7 @@ package sdaproject.server.resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import sdaproject.server.dto.AbstractDTO;
 import sdaproject.server.entity.AbstractEntity;
@@ -13,31 +14,33 @@ public abstract class AbstractResource<ENTITY extends AbstractEntity, DTO extend
 
     private static final Logger log = LoggerFactory.getLogger(AbstractResource.class);
 
-    public abstract AbstractService<ENTITY, DTO> getBasketService();
+    public abstract AbstractService<ENTITY, DTO> getService();
 
     @GetMapping("/open/{id}")
     public DTO getById(@PathVariable("id") Long id) {
-        return getBasketService().findById(id);
+        return getService().findById(id);
     }
 
     @GetMapping("/open")
     public Collection<DTO> getAll() {
-        return getBasketService().getAll();
+        return getService().getAll();
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public DTO create(@RequestBody DTO dto) {
-        return getBasketService().save(dto);
+        return getService().save(dto);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public DTO update(@RequestBody DTO dto) {
-        return getBasketService().update(dto);
+        return getService().update(dto);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable("id") Long id) throws Exception {
-        getBasketService().delete(id);
+        getService().delete(id);
     }
-
 }

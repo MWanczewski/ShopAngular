@@ -6,12 +6,15 @@ import sdaproject.server.entity.StockEntity;
 
 @Component
 public class StockConverter implements Converter<StockEntity, StockDTO> {
+
+    private final ProductConverter productConverter = new ProductConverter();
+
     @Override
     public StockEntity convertToEntity(StockDTO dto) {
         StockEntity entity = new StockEntity();
 
         entity.setId(dto.getId());
-        entity.setProduct(dto.getProduct());
+        entity.setProduct(productConverter.convertToEntity(dto.getProduct()));
         entity.setQuantity(dto.getQuantity());
         entity.setPrice(dto.getPrice());
 
@@ -23,7 +26,7 @@ public class StockConverter implements Converter<StockEntity, StockDTO> {
         StockDTO dto = new StockDTO();
 
         dto.setId(entity.getId());
-        dto.setProduct(entity.getProduct());
+        dto.setProduct(productConverter.convertToDto(entity.getProduct()));
         dto.setPrice(entity.getPrice());
         dto.setQuantity(entity.getQuantity());
 

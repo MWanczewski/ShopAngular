@@ -22,7 +22,7 @@ public class ProductResource
         this.productService = productService;
 }
     @Override
-    public AbstractService<ProductEntity, ProductDTO> getBasketService() {
+    public AbstractService<ProductEntity, ProductDTO> getService() {
 
         return productService;
     }

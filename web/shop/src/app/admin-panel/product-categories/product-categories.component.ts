@@ -10,18 +10,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ProductCategoriesComponent implements OnInit {
 
-  productCategories: Array<ProductCategoryModel> = [];
+ categories: Array<ProductCategoryModel> = [];
 
   constructor(private productCategoryService: ProductCategoryService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.productCategories = this.route.snapshot.data['productCategories'];
+    this.categories = this.route.snapshot.data['categories'];
   }
 
   removeProductCategory(categoryId: number, index: number) {
     this.productCategoryService.removeProductCategory(categoryId).subscribe(() => {
-      this.productCategories.splice(index, 1);
+      this.categories.splice(index, 1);
     });
   }
 

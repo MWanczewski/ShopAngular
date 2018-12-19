@@ -102,7 +102,7 @@ const routes: Routes = [
         path: 'products/add',
         component: EditProductComponent,
         resolve: {
-          productCategories: ProductCategoriesResolve
+          categories: ProductCategoriesResolve
         }
       },
 
@@ -111,7 +111,7 @@ const routes: Routes = [
         component: EditProductComponent,
         resolve: {
           product: ProductResolve,
-          productCategories: ProductCategoriesResolve
+          categories: ProductCategoriesResolve
         }
       },
 
@@ -120,7 +120,7 @@ const routes: Routes = [
         path: 'product-categories',
         component: ProductCategoriesComponent,
         resolve: {
-          productCategories: ProductCategoriesResolve
+          categories: ProductCategoriesResolve
         }
       },
       {
@@ -131,7 +131,7 @@ const routes: Routes = [
         path: 'product-categories/edit/:id',
         component: EditProductCategoryComponent,
         resolve: {
-          productCategory: ProductCategoryResolve
+          category: ProductCategoryResolve
         }
       },
 

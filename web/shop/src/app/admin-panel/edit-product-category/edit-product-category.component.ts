@@ -11,20 +11,20 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class EditProductCategoryComponent implements OnInit {
 
-  productCategory: ProductCategoryModel = new ProductCategoryModel();
+ category: ProductCategoryModel = new ProductCategoryModel();
 
   constructor(private productCategoryService: ProductCategoryService,
               private location: Location,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.route.snapshot.data['productCategory']) {
-      this.productCategory = this.route.snapshot.data['productCategory'];
+    if (this.route.snapshot.data['category']) {
+      this.category = this.route.snapshot.data['category'];
     }
   }
 
   saveProductCategory() {
-    this.productCategoryService.saveProductCategory(this.productCategory).subscribe(() => {
+    this.productCategoryService.saveProductCategory(this.category).subscribe(() => {
       this.back();
     });
   }

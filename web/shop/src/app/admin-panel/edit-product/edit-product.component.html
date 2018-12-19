@@ -22,7 +22,7 @@
     </section>
   </mat-card-content>
   <mat-form-field>
-    <mat-select [(ngModel)]="product.category.id" name="productCategoryEntity" placeholder="Wybierz kategorie">
+    <mat-select [(ngModel)]="product.category.id" name="category" placeholder="Wybierz kategorie">
       <mat-option *ngFor="let category of categories" [value]="category.id">
         {{category.name}}
       </mat-option>

@@ -26,11 +26,11 @@ export class WarehouseService {
     return this.warehousesStream.pipe(startWith(this.warehouses));
   }
   public removeWarehouse(id: number) {
-    return this.http.delete("/api/stocks/open/" + id);
+    return this.http.delete("/api/stocks/" + id);
   }
 
   public getWarehouse(id: number): Observable<WarehouseModel> {
-    return this.http.get("/api/stocks/" + id).pipe(map((response: WarehouseModel) => {
+    return this.http.get("/api/stocks/open/" + id).pipe(map((response: WarehouseModel) => {
       return response;
     }));
   }

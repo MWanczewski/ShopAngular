@@ -22,7 +22,7 @@ public class StockResource extends AbstractResource<StockEntity, StockDTO> {
     }
 
     @Override
-    public AbstractService<StockEntity, StockDTO> getBasketService() {
+    public AbstractService<StockEntity, StockDTO> getService() {
         return stockService;
     }
 }

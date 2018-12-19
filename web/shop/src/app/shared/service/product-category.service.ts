@@ -37,13 +37,13 @@ export class ProductCategoryService {
     return this.http.delete("/api/product-categories/" + id);
   }
 
-  public saveProductCategory(productCategory: ProductCategoryModel): Observable<ProductCategoryModel> {
-    if (productCategory.id) {
-      return this.http.put("/api/product-categories/" + productCategory.id, productCategory).pipe(map((response: ProductCategoryModel) => {
+  public saveProductCategory(category: ProductCategoryModel): Observable<ProductCategoryModel> {
+    if (category.id) {
+      return this.http.put("/api/product-categories/" + category.id, category).pipe(map((response: ProductCategoryModel) => {
         return response;
       }));
     } else {
-      return this.http.post("/api/product-categories", productCategory).pipe(map((response: ProductCategoryModel) => {
+      return this.http.post("/api/product-categories", category).pipe(map((response: ProductCategoryModel) => {
         return response;
       }));
     }

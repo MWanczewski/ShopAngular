@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  addtoBasket(item: WarehouseModel){
+  addToBasket(item: WarehouseModel){
     let shoppingBasketItem = new BasketItemModel(item,1);
     this.basketService.addItem(shoppingBasketItem);
   }

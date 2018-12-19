@@ -3,10 +3,9 @@ package sdaproject.server.dto;
 import sdaproject.server.entity.ProductCategoryEntity;
 
 
-
 public class ProductDTO extends AbstractDTO{
     private String name;
-    private ProductCategoryEntity productCategoryEntity;
+    private ProductCategoryDTO category;
     private String description;
 
     public String getDescription() {
@@ -25,11 +24,11 @@ public class ProductDTO extends AbstractDTO{
         this.name = name;
     }
 
-    public ProductCategoryEntity getProductCategoryEntity() {
-        return productCategoryEntity;
+    public ProductCategoryDTO getCategory() {
+        return category;
     }
 
-    public void setProductCategoryEntity(ProductCategoryEntity productCategoryEntity) {
-        this.productCategoryEntity = productCategoryEntity;
+    public void setCategory(ProductCategoryDTO category) {
+        this.category = category;
     }
 }

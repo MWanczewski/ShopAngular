@@ -63,7 +63,7 @@ import {HasAnyRoleDirective} from "./directive/has-any-role.directive";
     MatTreeModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  declarations: [    HasAnyRoleDirective],
+  declarations: [HasAnyRoleDirective],
   providers: [],
   exports: [
     FormsModule,
